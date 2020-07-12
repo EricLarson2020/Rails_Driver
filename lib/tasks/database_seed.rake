@@ -1,7 +1,11 @@
 # require 'csv'
-# require 'pry'
+ require 'pry'
 require './lib/seed/customers_seed.rb'
 require './lib/seed/merchants_seed.rb'
+require './lib/seed/invoices_seed.rb'
+require './lib/seed/items_seed.rb'
+require './lib/seed/invoice_items_seed.rb'
+require './lib/seed/transactions_seed.rb'
 
 
 
@@ -52,16 +56,13 @@ require './lib/seed/merchants_seed.rb'
 
 desc "Reset and seed the database from existing CSV files"
   task process_csv: 'db:reset' do
-  ActiveRecord::Base.connection.tables.each do |table|
-
-
     CustomersSeed.seed
     MerchantsSeed.seed
+    ItemsSeed.seed
+    InvoicesSeed.seed
+    InvoiceItemsSeed.seed
+    TransactionsSeed.seed
     end
-end
-
-
-  #end
 
 
     # Rake::Task['tmp:some_task'].invoke
