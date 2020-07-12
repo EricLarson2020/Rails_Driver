@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'rack-cors'
 gem 'simplecov', require: false, group: :test
 
+
 group :development, :test do
   gem 'webdrivers'
   gem 'pry'

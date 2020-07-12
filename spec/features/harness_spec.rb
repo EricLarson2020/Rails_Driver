@@ -9,6 +9,8 @@ RSpec.describe 'Spec Harness' do
   describe 'ReST endpoints' do
     describe 'Items' do
       it 'can get an item' do
+      
+
         response = conn('/api/v1/items/179').get
 
         expected_attributes = {
